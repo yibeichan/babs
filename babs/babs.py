@@ -2645,7 +2645,7 @@ class Container:
         bash_file.write('mkdir -p ${PWD}/.git/tmp/wkdir\n')
         bash_file.write('export TEMPLATEFLOW_HOME=${HOME}/TEMPLATEFLOW_HOME_TEMP \n')
         bash_file.write('mkdir -p ${TEMPLATEFLOW_HOME}\n')
-        cmd_head_singularityRun = 'singularity run --containall --writable-tmpfs'
+        cmd_head_singularityRun = 'singularity -v run --userns --no-home --writable-tmpfs'
         # binding:
         cmd_head_singularityRun += ' \\' + '\n\t' + '-B ${PWD}'
 
